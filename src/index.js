@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import NavWrapper from './routes/navWrapper'
 import reportWebVitals from './reportWebVitals';
+import { StateProvider } from './containers/list/stateProvider'
+import reducer, { initState } from './containers/list/reducer'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StateProvider initialState={initState} reducer={reducer}>
+      <NavWrapper />
+    </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

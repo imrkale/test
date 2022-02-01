@@ -1,0 +1,319 @@
+/* body */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+:root {
+  --text-color: #124a63;
+  --text-color-secondary: #b3c5cd;
+  --primary-color: #21b6b7;
+  --background-color: #f9f9f9;
+  --background-color-dark: #eef3f6;
+  --background-color-light: #fff;
+  --font-family: "Poppins", sans-serif;
+  --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.body{
+    flex: 0.80;
+    width: 100%;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ECECEC;
+    position: relative;
+}
+
+.heading {
+    display: flex;
+  }
+  .heading button {
+    border: none;
+    background-color: transparent;
+  }
+  .heading_name,
+  .heading_population {
+    flex: 1;
+    padding: 20px;
+    color: var(--text-color-secondary);
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    outline-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .heading_name {
+    justify-content: flex-start;
+  }
+  .heading_arrow {
+    color: var(--primary-color);
+    display: flex;
+  }
+  .row {
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    margin: 10px 10px;
+    box-shadow: var(--box-shadow);
+    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  }
+  .row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.05);
+  }
+  .name {
+    flex: 1;
+    text-align: left;
+  }
+  .population {
+    flex: 1;
+    /* text-align: center */
+  }
+  
+
+
+/* list */
+
+.list{
+    background-color: #FFFFFF;
+    height:100vh;
+    width:100%;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+.loader{
+    position: absolute;
+    z-index: 3;
+    transform: translateX(-30vh);
+}
+.innerList{
+    display: flex;
+    height: 80vh;
+    width: 80%;
+    flex:0.80;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F9F9;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px;
+    border-radius: 5px;
+}
+
+.details{
+    flex:0.20;
+    background-color:#EEF3F6;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px;
+    border-radius:4px;
+    height:79vh;
+    width:100%;
+    padding:5px;
+    margin-left: 10px;
+}
+.details > div{
+     overflow-y: scroll;
+     height: 80%;
+}
+.details > h2{
+    font-family: "Poppins",sans-serif;
+    border-bottom: 2px solid white;
+    color: gray;
+}
+.details > h2 > div{
+    display: flex;
+    flex-direction: column;
+}
+.detailsList{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+    background-color:white;
+    border-radius: 5px;
+}
+.detailsHeader{
+    display: flex;
+    padding:4px;
+    border-bottom: 1px solid rgb(148, 146, 146);
+    /* background-color:red; */
+}
+.detailsHeader > div
+{
+    flex: 0.8;
+    display: flex;
+}
+.detailsHeader > img{
+    /* background-color:yellow; */
+    width: 25px;
+    flex: 0.2;
+}
+.detailsBody{
+    /* background-color:gray; */
+    padding:4px;
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+}
+/* header */
+
+.header{
+    flex: 0.10;
+    width: 100%;
+    /* padding: 5px; */
+    height: 100%;
+    border-bottom: 1px solid #ECECEC;
+    position:relative;
+}
+.filter{
+    width: 110px;
+    transform: translateY(25%);
+    margin-left: 20px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    background:linear-gradient(180deg,#499bea 0,#207ce5);
+}
+.filterDropDown{
+    background-color: white;
+    width: 30%;
+    display: flex;
+    height:18vh;
+    top:-15px;
+    position:absolute;
+    z-index: 1;
+    border: 2px solid #ECECEC;
+    transform: translateY(50%);
+    margin-left: 20px;
+    border-radius: 4px;
+}
+.filterDropDown:before {
+    content:'';
+    position: absolute;
+    left: 3px;
+    right: 10;
+    margin: 0 auto;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 9px solid white;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+.leftFilter{
+    background-color:white;
+    font-family: "Poppins",sans-serif;
+    color: #212529;
+    padding: 0px 5px;
+    width: 100%;
+    flex:0.5;
+}
+.leftFilter > div{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.leftFilter > div >label{
+    font-size:14px;
+}
+.form-control{
+    width:100%;
+    height:5vh;
+    border: 1px solid #e2dfdf;
+    border-radius: 4px;
+    outline: none;
+}
+.rightFilter{
+    background-color:white;
+    width: 100%;
+    flex:0.5;
+}
+.rightFilter > div {
+    display: flex;
+    flex-direction: column;
+}
+.rightFilter > div > div> label{
+    font-size:14px;
+}
+.rightFilter > div > div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 5px;
+}
+.rightFilter > div > div:nth-child(2){
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    padding: 10px 0px;
+}
+.resetbtn{
+    background-color:#E2E2E2;
+    border: none;
+    padding:7px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    margin-left: 5px;
+}
+.applybtn{
+    background:linear-gradient(180deg,#499bea 0,#207ce5);
+    border: none;
+    padding:7px 12px;
+    color:white;
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-right:5px
+}
+.datePicker{
+    background-color: white;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: none; */
+    /* width:150px; */
+}
+
+/* footer */
+
+.footer{
+    flex: 0.10;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+}
+.footer > .previous{
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    background:linear-gradient(180deg,#499bea 0,#207ce5);
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    color:white;
+    cursor: pointer;
+}
+.footer > .next{
+    padding: 10px 30px;
+    margin: 0px 10px;
+    color:white;
+    background:linear-gradient(180deg,#499bea 0,#207ce5);
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
